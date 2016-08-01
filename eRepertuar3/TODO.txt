@@ -1,4 +1,3 @@
-source control
 >[raczej: serializacja]  Wyœwietlanie pozycji okien (¿eby mo¿na by³o poprawiæ w kodzie)
 
 Funkcja generowania œpiewnika (na pocz¹tku umieœciæ nabo¿eñstwa):
