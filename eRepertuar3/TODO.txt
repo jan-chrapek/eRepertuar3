@@ -1,0 +1,90 @@
+source control
+>[raczej: serializacja]  Wyœwietlanie pozycji okien (¿eby mo¿na by³o poprawiæ w kodzie)
+
+Funkcja generowania œpiewnika (na pocz¹tku umieœciæ nabo¿eñstwa):
+	- w œpiewniku na pocz¹tku umieœciæ nabo¿eñstwa
+	- mo¿liwoœæ wyboru: il. znaków na liniê, il. linii na stronê [i kolumnê], pocz¹tkowego ID pieœni (spr. czy pieœniom ze zmienionym tekstem mo¿na zmieniaæ ID z zachowaniem relacji), pocz¹tkowego nr strony;
+	- podgl¹d liczby stron (uwzgl. dodawanie spacji przy z³amaniu wiersza)
+	- usuwanie bia³ych znaków TYLKO Z KOÑCA LINII
+	- automatyczne wpisanie numerów stron do bazy
+	- kolejnoœæ pieœni wg ID (zbli¿one tematycznie)
+	- spis treœci
+		- generowaæ w formacie:
+A
+ababab<tab>1
+acacaca<tab>7
+B
+bxbxbxb<tab>5
+		(¿eby mo¿na by³o sortowaæ linie alfabetycznie po tytu³ach, text to table)
+		- niektóre tytu³y powtórzyæ w 2 wariantach, np. [TAIZE], Barka, Czarna Madonna, Nasze plany i nadzieje
+
+Przycisk "wyœwietl listê wybranych": restore/bring to front
+Uk³ad umo¿liwiaj¹cy czytanie tekstu psalmu i patrzenie na akordy (tekst i szczegó³y po lewej) oraz jednoczeœnie czytanie tekstu nabo¿eñstw i wyœw. listy wybranych (lista wybranych po lewej, mo¿e siê pokrywaæ ze szczegó³ami)
+Otwórz plik: SetTopmost(false) zamiast minimize; Pasek narzêdzi: SetTopmost(true)
+Znaczniki TODO przy pieœniach+ostrze¿enie przy wyjœciu
+
+Kopia zapasowa przy wyjœciu z programu, jeœli zmodyfikowano bazê danych
+Nowy rok liturgiczny - "czy jesteœ pewien..."
+
+Dyrektywy (+Hint):
+	/m: powiêkszyæ okno z tekstem pieœni
+Autom. nadokres
+SongDetails - przyciski: Okresy, czas
+
+Kolumna: czas maks.;
+"Maksymalizacja" wielkoœci okna z tekstem pieœni (¿eby nie wchodzi³o na szczegó³y); przywróæ domyœlne pozycje okien
+<nieprzypisane do okresu>,<wszystkie>,<nabo¿eñstwo>: wypisaæ alfabetycznie)
+
+[Skróty klawiaturowe]
+
+- jeœli by³by zmieniany schemat bazy danych, to (na wszelki wypadek) dodaæ pola:
+	- do tabeli "Pieœni": dyrektywy, tekst do œpiewnika, obrazek (np. ma³e nuty), zrobiæ próbê, vol, tonacja (do statystyk)
+	- do tabeli "Czêœci": skrócona nazwa
+	- do tabeli "Okresy": komentarz
+	- do tabeli "PieœniOkresy": liczba zagrañ
+	
+Prawdopodobnie wszystkie okresy s¹ ju¿ przepisane z zeszytu
+
+Do wpisania:
+- Pan jest moc¹, Wielbiæ Pana chcê
+- Gdy klêczê przed Tob¹?
+[-Maryjo, œliczna Pani: https://www.youtube.com/watch?v=FYuNwwC7jSM]
+- Nuty do Ave Maria
+- Wielkanoc: http://www.tekstowo.pl/piosenka,religijne,ty_wskazales_droge_do_milosci.html
+- Do kalendarza: Dzieñ Papieski, spr. inne
+- Wzi¹æ pod uwagê, ¿e mo¿e nie byæ pieœni na wyjœcie, jeœli jest adoracja
+- podzia³ pieœni wg Ex. Deo (co na któr¹ cz. Mszy)
+Prawdopodobnie wszystkie pieœni maj¹ wpisane teksty do wydruku (26.06.2016)
+- https://pl.wikipedia.org/wiki/Œwiêta_katolickie_w_Polsce (np. œw. Józefa)
+
+Adwent:
+I: 02.12.
+II: 09.12
+III: 16.12
+IV: 23.12
+
+Wielki Post:
+Œr. Popielcowa: 22.02
+I: 26.02
+II:: 04.3
+III: 11.03
+IV: 18.03
+V: 25.03
+Nd. Palmowa: 01.04
+Wielkanoc:
+I: Wielkanoc - 08.04
+II: Nd. Mi³osierdzia - 15.04
+III: Nd. Biblijna - 22.04
+IV: Nd. Dobrego Pasterza - 29.04
+V: 06.05
+VII: Wniebowst¹pienie - 15.05
+VIII: Zes³anie Ducha Œw. - 22.05
+IX: Trójcy Œw. - 29.05
+Bo¿e Cia³o - 02.06
+
+Raczej nie poprawiaæ:
+- Wy³¹czyæ textChanged i sel. changed przy starcie (dziêki temu do textChanged mo¿na przenieœæ keyPressed, tzn. form1.gridViewsSetEnabled(false), dziêki czemu Ctrl+C nie blokowa³oby gridViews, a wklejanie przy pomocy myszki - blokowa³oby)
+- tabele nie odœwie¿aj¹ siê np. po zmianie tytu³u pieœni, pole tekstowe nie odœwie¿a siê po zmianie tekstu
+- Drzewa wielopoziomowe:
+	Okr. zw.->Listopad->Dz. zaduszny;
+			->Czerwiec->Piotra i Paw³a
